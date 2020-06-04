@@ -38,4 +38,20 @@ public class ResourcesDTO {
 		this.unity_price = unity_price;
 	}
 
+	public Date getInitial_date() {
+		return initial_date;
+	}
+
+	public void setInitial_date(Date initial_date) {
+		this.initial_date = initial_date;
+	}
+
+	public Date getEnd_date() {
+		return end_date;
+	}
+
+	public void setEnd_date(Date end_date) {
+		this.end_date = end_date;
+	}
+
 }

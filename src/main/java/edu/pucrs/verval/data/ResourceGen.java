@@ -40,19 +40,19 @@ public class ResourceGen {
 		this.resources.add(new Resource(19, "Smartphone Samsung 8GB", "M520-41P", 5, 300.0, "Mobile", 0.0, 0));
 		
 		//Generate furniture resources (tables, chairs, desks)
-		this.resources.add(new Resource(20, "Wooden Chair Kit x4",               "F281-41P", 5, 300.0, "Furniture", 0.0, 0));
-		this.resources.add(new Resource(21, "Wooden Table with Golden Details",  "M520-41P", 5, 300.0, "Furniture", 0.0, 0));
-		this.resources.add(new Resource(22, "Steel Chair Kit x4",                "M520-41P", 5, 300.0, "Furniture", 0.0, 0));
-		this.resources.add(new Resource(23, "Steel Table",                       "M520-41P", 5, 300.0, "Furniture", 0.0, 0));
-		this.resources.add(new Resource(24, "Glass Table With Decoration",       "M520-41P", 5, 300.0, "Furniture", 0.0, 0));
-		this.resources.add(new Resource(25, "Gigantic Lamp With Purple Details", "M520-41P", 5, 300.0, "Furniture", 0.0, 0));
+		this.resources.add(new Resource(20, "Wooden Chair Kit x4",                        "F281-41P", 5, 300.0, "Furniture", 0.0, 0));
+		this.resources.add(new Resource(21, "Wooden Table with Golden Details",           "M520-41P", 5, 300.0, "Furniture", 0.0, 0));
+		this.resources.add(new Resource(22, "Steel Chair Kit x4",                         "M520-41P", 5, 300.0, "Furniture", 0.0, 0));
+		this.resources.add(new Resource(23, "Steel Table",                                "M520-41P", 5, 300.0, "Furniture", 0.0, 0));
+		this.resources.add(new Resource(24, "Glass Table With Platinum Decoration",       "M520-41P", 5, 300.0, "Furniture", 0.0, 0));
+		this.resources.add(new Resource(25, "Gigantic Lamp With Purple Details",          "M520-41P", 5, 300.0, "Furniture", 0.0, 0));
 	}
 
 	public static ResourceGen getInstance() {
 		return instance;
 	}
 	
-	public Iterable<Resource> getResources() {
+	public List<Resource> getResources() {
 		return this.resources;
 	}
 }

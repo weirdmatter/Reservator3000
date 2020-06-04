@@ -2,11 +2,13 @@ package edu.pucrs.verval.DTO;
 
 import java.util.List;
 
+import edu.pucrs.verval.entities.Resource;
+
 public class NewReservationDTO {
 	
 	private Integer collaborator_id;
 	
-	private List<ResourcesDTO> resources;
+	private List<Resource> resources;
 
 	public Integer getCollaborator_id() {
 		return collaborator_id;
@@ -16,11 +18,11 @@ public class NewReservationDTO {
 		this.collaborator_id = collaborator_id;
 	}
 
-	public List<ResourcesDTO> getResources() {
+	public List<Resource> getResources() {
 		return resources;
 	}
 
-	public void setResources(List<ResourcesDTO> resources) {
+	public void setResources(List<Resource> resources) {
 		this.resources = resources;
 	}
 
