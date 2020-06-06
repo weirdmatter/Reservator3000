@@ -19,7 +19,8 @@ public class ResourceController {
 	
 	@GetMapping("/resources")
 	public Iterable<Resource> findAllResources() {
-		return ResourceGen.getInstance().getResources();
+		List<Resource> resource_by_type = new ArrayList<>();
+		return resource_by_type;
 	}
 	
 	@GetMapping("/resources/{type_of}")
@@ -28,11 +29,7 @@ public class ResourceController {
 		type_of = type_of.toLowerCase();
 		
 		List<Resource> resource_by_type = new ArrayList<>();
-		for(Resource r : ResourceGen.getInstance().getResources()) {
-			if(r.getType().toLowerCase().equals(type_of)) {
-				resource_by_type.add(r);
-			}
-		}
+
 		
 		return resource_by_type;
 	}

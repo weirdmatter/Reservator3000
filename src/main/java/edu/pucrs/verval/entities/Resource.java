@@ -17,10 +17,12 @@ public class Resource {
 	private Double room_size;
 	
 	private Integer seat_amount;
+	
+	private Double price_per_seat;
 
 	
 	public Resource(Integer id, String name, String code, Integer available_amount, Double price, String type,
-			Double room_size, Integer seat_amount) {
+			Double room_size, Integer seat_amount, Double price_per_seat) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -30,6 +32,7 @@ public class Resource {
 		this.type = type;
 		this.room_size = room_size;
 		this.seat_amount = seat_amount;
+		this.price_per_seat = price_per_seat;
 	}
 	
 	public Integer getId() {
@@ -91,4 +94,26 @@ public class Resource {
 	public void setSeat_amount(Integer seat_amount) {
 		this.seat_amount = seat_amount;
 	}
+	
+	
+
+	public Double getPrice_per_seat() {
+		return price_per_seat;
+	}
+
+	public void setPrice_per_seat(Double price_per_seat) {
+		this.price_per_seat = price_per_seat;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	@Override
+	public String toString() {
+		return "Resource [id=" + id + ", name=" + name + ", code=" + code + ", available_amount=" + available_amount
+				+ ", price=" + price + ", type=" + type + ", room_size=" + room_size + ", seat_amount=" + seat_amount
+				+ "]";
+	}
+	
 }

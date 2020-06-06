@@ -1,6 +1,14 @@
 package edu.pucrs.verval.DTO;
 
-import java.sql.Date;
+import org.joda.time.LocalDate;
+
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+import com.fasterxml.jackson.datatype.joda.deser.LocalDateDeserializer;
+
+import com.fasterxml.jackson.datatype.joda.ser.LocalDateSerializer;
 
 public class ResourcesDTO {
 	
@@ -10,9 +18,13 @@ public class ResourcesDTO {
 	
 	private Double unity_price;
 	
-	private Date initial_date;
+	@JsonDeserialize(using=LocalDateDeserializer.class)
+	@JsonSerialize(using = LocalDateSerializer.class)
+	private LocalDate initial_date;
 	
-	private Date end_date;
+	@JsonDeserialize(using=LocalDateDeserializer.class)
+	@JsonSerialize(using = LocalDateSerializer.class)
+	private LocalDate end_date;
 
 	public Integer getResource_id() {
 		return resource_id;
@@ -38,19 +50,19 @@ public class ResourcesDTO {
 		this.unity_price = unity_price;
 	}
 
-	public Date getInitial_date() {
+	public LocalDate getInitial_date() {
 		return initial_date;
 	}
 
-	public void setInitial_date(Date initial_date) {
+	public void setInitial_date(LocalDate initial_date) {
 		this.initial_date = initial_date;
 	}
 
-	public Date getEnd_date() {
+	public LocalDate getEnd_date() {
 		return end_date;
 	}
 
-	public void setEnd_date(Date end_date) {
+	public void setEnd_date(LocalDate end_date) {
 		this.end_date = end_date;
 	}
 
