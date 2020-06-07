@@ -4,13 +4,16 @@ import org.joda.time.LocalDate;
 
 public class DebugClass {
 	
+	private Collaborator collab;
+	
 	private LocalDate init;
 	
 	private LocalDate end;
 	
 	private Double cost;
 	
-	public DebugClass(LocalDate i, LocalDate e) {
+	public DebugClass(Collaborator collab, LocalDate i, LocalDate e) {
+		this.collab = collab;
 		this.init = i;
 		this.end = e;
 	}
@@ -37,5 +40,13 @@ public class DebugClass {
 
 	public void setCost(Double cost) {
 		this.cost = cost;
+	}
+
+	public Collaborator getCollab() {
+		return collab;
+	}
+
+	public void setCollab(Collaborator collab) {
+		this.collab = collab;
 	}
 }

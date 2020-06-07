@@ -2,32 +2,24 @@ package edu.pucrs.verval.utils;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
-import org.joda.time.DateTime;
 import org.joda.time.Days;
 import org.joda.time.LocalDate;
 
 import edu.pucrs.verval.DTO.ResourcesDTO;
 import edu.pucrs.verval.data.CollaboratorGen;
-import edu.pucrs.verval.data.ReservationGen;
 import edu.pucrs.verval.data.ResourceGen;
 import edu.pucrs.verval.entities.Collaborator;
-import edu.pucrs.verval.entities.Reservation;
 import edu.pucrs.verval.entities.Resource;
 
 public class Utilitaries {
 	
 	public static boolean collaboratorExists(Integer collaborator_id) {
-		List<Collaborator> collab = CollaboratorGen.getInstance().getCollaborators();
+		HashMap<Integer, Collaborator> collab = CollaboratorGen.getInstance().getCollaborators();
 		
-		for(Collaborator b : collab) {
-			if(b.getId().equals(collaborator_id)) {
-				return true;
-			}
-		}
-		
-		return false;
+		return collab.containsKey(collaborator_id);
 	}
 	
 	public static boolean checkReservationDate(LocalDate initial_date, LocalDate end_date) {
@@ -83,6 +75,10 @@ public class Utilitaries {
 		}
 		
 		return total;
+	}
+	
+	public static boolean hasAvailableResource(Resource res) {
+		return res.getAvailable_amount() > 0;
 	}
 	
 	
