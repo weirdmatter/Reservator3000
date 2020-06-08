@@ -2,7 +2,7 @@ package edu.pucrs.verval.entities;
 
 import org.joda.time.LocalDate;
 
-public class DebugClass {
+public class CollaboratorCostReservation {
 	
 	private Collaborator collab;
 	
@@ -12,7 +12,7 @@ public class DebugClass {
 	
 	private Double cost;
 	
-	public DebugClass(Collaborator collab, LocalDate i, LocalDate e) {
+	public CollaboratorCostReservation(Collaborator collab, LocalDate i, LocalDate e) {
 		this.collab = collab;
 		this.init = i;
 		this.end = e;

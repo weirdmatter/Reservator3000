@@ -1,5 +1,6 @@
 package edu.pucrs.verval.utils;
 
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -13,6 +14,7 @@ import edu.pucrs.verval.data.CollaboratorGen;
 import edu.pucrs.verval.data.ResourceGen;
 import edu.pucrs.verval.entities.Collaborator;
 import edu.pucrs.verval.entities.Resource;
+import edu.pucrs.verval.exception.InvalidDateIntervalException;
 
 public class Utilitaries {
 	
@@ -57,8 +59,10 @@ public class Utilitaries {
 		return resources_wish_list;
 	}
 	
-	public static Double calculateCostForReservation(Resource res, Integer quantity, LocalDate initialDate, LocalDate endDate) {
+	public static Double calculateCostForReservation(Resource res, Integer quantity, LocalDate initialDate, LocalDate endDate) throws InvalidDateIntervalException {
 		Days diff = Days.daysBetween(initialDate, endDate);
+		
+		if(diff.getDays() <= 0) throw new InvalidDateIntervalException("Date Interval Error. Code: 0x001");
 		
 		Double total = 0.0;
 		
@@ -79,6 +83,11 @@ public class Utilitaries {
 	
 	public static boolean hasAvailableResource(Resource res) {
 		return res.getAvailable_amount() > 0;
+	}
+	
+	public static String generateResourceGroupId() {
+		Double rand = Math.random();
+		return rand.toString();
 	}
 	
 	

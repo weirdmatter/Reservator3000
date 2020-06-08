@@ -10,28 +10,32 @@ import java.util.Map;
 import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
 
-import edu.pucrs.verval.entities.DebugClass;
+import edu.pucrs.verval.entities.CollaboratorCostReservation;
 import edu.pucrs.verval.entities.Reservation;
 import edu.pucrs.verval.entities.Resource;
+import edu.pucrs.verval.response.ReservationSuccess;
 
 public class ReservationGen {
 
 	private List<Reservation> reservations;
 	
-	private HashMap<Integer, ArrayList<ArrayList<DebugClass>>> item_date;
+	private HashMap<Integer, ArrayList<ArrayList<CollaboratorCostReservation>>> item_date;
+	
+	private HashMap<String, ReservationSuccess> history;
 	
 	private static ReservationGen instance = new ReservationGen();
 	
 	public ReservationGen() {
 		this.reservations = new ArrayList<>();
 		this.item_date = new HashMap<>();
+		this.history = new HashMap<>();
 		
 		Iterator it = ResourceGen.getInstance().getResources().entrySet().iterator();
 		
 		while (it.hasNext()) {
 			Map.Entry pair = (Map.Entry) it.next();
-			ArrayList<DebugClass> in = new ArrayList<>();
-			ArrayList<ArrayList<DebugClass>> inner = new ArrayList<>();
+			ArrayList<CollaboratorCostReservation> in = new ArrayList<>();
+			ArrayList<ArrayList<CollaboratorCostReservation>> inner = new ArrayList<>();
 			this.item_date.put((Integer)pair.getKey(), inner);
 		}
 		
@@ -45,8 +49,12 @@ public class ReservationGen {
 		return this.reservations;
 	}
 
-	public HashMap<Integer, ArrayList<ArrayList<DebugClass>>> getItem_date() {
+	public HashMap<Integer, ArrayList<ArrayList<CollaboratorCostReservation>>> getItem_date() {
 		return item_date;
+	}
+	
+	public HashMap<String, ReservationSuccess> getHistory() {
+		return this.history;
 	}
 
 }
